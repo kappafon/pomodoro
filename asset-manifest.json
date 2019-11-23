@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/kappafon/pomodoro.git/static/css/main.dfca195d.chunk.css",
-    "main.js": "/kappafon/pomodoro.git/static/js/main.f10e6ac0.chunk.js",
-    "main.js.map": "/kappafon/pomodoro.git/static/js/main.f10e6ac0.chunk.js.map",
-    "runtime-main.js": "/kappafon/pomodoro.git/static/js/runtime-main.4cdfd18a.js",
-    "runtime-main.js.map": "/kappafon/pomodoro.git/static/js/runtime-main.4cdfd18a.js.map",
-    "static/js/2.5866a7f1.chunk.js": "/kappafon/pomodoro.git/static/js/2.5866a7f1.chunk.js",
-    "static/js/2.5866a7f1.chunk.js.map": "/kappafon/pomodoro.git/static/js/2.5866a7f1.chunk.js.map",
-    "index.html": "/kappafon/pomodoro.git/index.html",
-    "precache-manifest.59b77fd93df52fc1bbeb17c3e9fbd681.js": "/kappafon/pomodoro.git/precache-manifest.59b77fd93df52fc1bbeb17c3e9fbd681.js",
-    "service-worker.js": "/kappafon/pomodoro.git/service-worker.js",
-    "static/css/main.dfca195d.chunk.css.map": "/kappafon/pomodoro.git/static/css/main.dfca195d.chunk.css.map",
-    "static/media/logo.svg": "/kappafon/pomodoro.git/static/media/logo.25bf045c.svg"
+    "main.css": "/pomodoro/static/css/main.dfca195d.chunk.css",
+    "main.js": "/pomodoro/static/js/main.47d614f5.chunk.js",
+    "main.js.map": "/pomodoro/static/js/main.47d614f5.chunk.js.map",
+    "runtime-main.js": "/pomodoro/static/js/runtime-main.5de82f58.js",
+    "runtime-main.js.map": "/pomodoro/static/js/runtime-main.5de82f58.js.map",
+    "static/js/2.5866a7f1.chunk.js": "/pomodoro/static/js/2.5866a7f1.chunk.js",
+    "static/js/2.5866a7f1.chunk.js.map": "/pomodoro/static/js/2.5866a7f1.chunk.js.map",
+    "index.html": "/pomodoro/index.html",
+    "precache-manifest.a4f2ea79a954d204d66941c5ccd4279f.js": "/pomodoro/precache-manifest.a4f2ea79a954d204d66941c5ccd4279f.js",
+    "service-worker.js": "/pomodoro/service-worker.js",
+    "static/css/main.dfca195d.chunk.css.map": "/pomodoro/static/css/main.dfca195d.chunk.css.map",
+    "static/media/logo.svg": "/pomodoro/static/media/logo.25bf045c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4cdfd18a.js",
+    "static/js/runtime-main.5de82f58.js",
     "static/js/2.5866a7f1.chunk.js",
     "static/css/main.dfca195d.chunk.css",
-    "static/js/main.f10e6ac0.chunk.js"
+    "static/js/main.47d614f5.chunk.js"
   ]
 }
