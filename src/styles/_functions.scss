@@ -1,0 +1,76 @@
+/// helper function
+@function px-to-rem($value, $root-value: 14px) {
+    @return 1rem * ($value / $root-value);
+}
+
+/// helper function
+/// Removes transparency from the color and calculates a new one considering the background
+/// @param {Color} $color - transparent color
+/// @param {Color} $background-color - background color (default: white)
+/// @return {Color} solid color
+@function opaquify-color($color, $background-color: white) {
+    $opacity: alpha($color);
+    $red: $opacity * red($color) + (1 - $opacity) * red($background-color);
+    $green: $opacity * green($color) + (1 - $opacity) * green($background-color);
+    $blue: $opacity * blue($color) + (1 - $opacity) * blue($background-color);
+    @return rgb($red, $green, $blue);
+}
+
+/// Converts a px input unit into a responsive 'Viewport Height' unit. It defaults to that (input) value on Full HD resolution (1920*1080)
+/// It keeps 1/3 of the input unit fixed (as a lower limit) and adds 2/3 equivalent 'vh'
+/// @param $value - input value in px, e.g. input exact value from mockup specs
+/// @example - margin: px-to-vh(30px) 0;
+@function px-to-vh($value, $root-value: 1080px) {
+    $vh: $root-value * 0.01;
+    $min-value: ($value / 3);
+    $responsive-part: ($value - $min-value);
+
+    @return Calc(#{$min-value} + 1vh * ($responsive-part / $vh));
+}
+
+/// Converts a px input unit into a responsive 'Viewport Width' unit. It defaults to that (input) value on Full HD resolution (1920*1080)
+/// It keeps 1/3 of the input unit fixed (as a lower limit) and adds 2/3 equivalent 'vw'
+/// @param $value - input value in px, e.g. input exact value from mockup specs
+/// @example - margin: 0 px-to-vw(30px);
+@function px-to-vw($value, $root-value: 1920px) {
+    $vw: ($root-value * 0.01);
+    $min-value: ($value / 3);
+    $responsive-part: ($value - $min-value);
+
+    @return Calc(#{$min-value} + 1vw * ($responsive-part / $vw));
+}
+
+/// Recalculates a 'font-size' px input unit responsively based on viewport height and width.
+/// It reacts to both width and height at the same time, so it works similarly to px-to-vw/vh, but instead halves the result of each calculation to achieve responsiveness on both axis.
+/// So it still defaults to that (input) value on Full HD resolution (1920*1080)
+/// @param $value - input value in px, e.g. input exact value from mockup specs
+/// @example - font-size: font-size(35px);
+@function font-size($value) {
+    $min-font-size: px-to-rem(14px);
+    $value: px-to-rem($value);
+
+    $root-value-horizontal: px-to-rem(1920px);
+    $root-value-vertical: px-to-rem(1080px);
+
+    $min-value: ($value / 3);
+
+    @if $value < $min-font-size {
+        // if desired font size is smaller than $min-font-size e.g. 14px, fixed to responsive ratio is changed to 50% each,
+        // to avoid unreadable text on smaller screens
+        $min-value: ($value / 2);
+    }
+
+    $responsive-part: ($value - $min-value);
+
+    $vmin-horizontal: ($root-value-horizontal * 0.01);
+    $vmin-vertical: ($root-value-vertical * 0.01);
+
+    $result: Calc(
+        (
+                (#{$min-value} + 1vw * ($responsive-part / $vmin-horizontal)) +
+                    (#{$min-value} + 1vh * ($responsive-part / $vmin-vertical))
+            ) / 2
+    );
+
+    @return $result;
+}

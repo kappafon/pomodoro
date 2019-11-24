@@ -1,0 +1,28 @@
+@import './variables';
+
+:root {
+    /* Primary colors */
+    --primary-color: #{$orange};
+    // --secondary-color: #{$none};
+    --gray: #{$gray};
+    --white: #{$white};
+
+    /* Secondary colors */
+    --blue: #{$blue};
+    --green: #{$green};
+    --yellow: #{$yellow};
+    --red: #{$red};
+
+    /* 
+        Color shades are calculated exclusively using a mixin
+        If another shade is needed for whatever reason (instead rather
+        use the closest shade available), change the mixin and don't introduce
+        new properties.    
+    */
+    @include color-shades($orange, 'primary-color');
+    @include color-shades($gray, 'gray');
+    @include color-shades($blue, 'blue');
+    @include color-shades($green, 'green');
+    @include color-shades($yellow, 'yellow');
+    @include color-shades($red, 'red');
+}

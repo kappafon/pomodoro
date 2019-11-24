@@ -1,0 +1,26 @@
+@import './functions';
+
+/**
+    Generates shades of a color with a range of 
+    opacities and solid versions using opaquify-color()
+    Color property names are --<name>-<opacity>, --<name>-<opacity>-solid 
+*/
+@mixin color-shades($color, $name) {
+    --#{$name}-5: #{opaquify-color(rgba($color, 0.05))};
+    --#{$name}-10: #{opaquify-color(rgba($color, 0.1))};
+    --#{$name}-20: #{opaquify-color(rgba($color, 0.2))};
+    --#{$name}-30: #{opaquify-color(rgba($color, 0.3))};
+    --#{$name}-40: #{opaquify-color(rgba($color, 0.4))};
+    --#{$name}-50: #{opaquify-color(rgba($color, 0.5))};
+    --#{$name}-60: #{opaquify-color(rgba($color, 0.6))};
+    --#{$name}-70: #{opaquify-color(rgba($color, 0.7))};
+    --#{$name}-80: #{opaquify-color(rgba($color, 0.8))};
+    --#{$name}-90: #{opaquify-color(rgba($color, 0.9))};
+}
+
+@mixin ellipsis-text($padding-right: px-to-vw(10px)) {
+    overflow: hidden;
+    padding-right: $padding-right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
